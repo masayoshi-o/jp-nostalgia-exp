@@ -1,0 +1,536 @@
+@charset "UTF-8";
+
+/* リセットCSS */
+*{
+  text-decoration:none; 
+  list-style:none; 
+  margin:0px; padding:0px; 
+  outline:none;
+}
+
+body{
+  /* ここで全体のフォント設定 */
+  margin:0px; 
+  padding:0px; 
+  font-family: 'Times New Roman', Times, serif,'Baskerville',"Helvetica","Helvetica Neue";
+  /* letter-spacing: 0.07em; */
+}
+
+/* //////////font指定///////// */
+a {	
+  font-family: 'Baskerville';
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 18px;
+  color: #2A83EB;
+}
+
+p    {
+  font-family: 'Times New Roman', Times, serif;
+  color: #707070;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.p_text_w540 {
+    max-width: 540px;
+}
+
+.p_list_text {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.text_mtop36 {
+    margin-top: 36px;
+}
+
+.text_mtopbtm36 {
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+.block_mtop96 {
+  margin-top: 96px;
+}
+
+.text_ptop28_l38_b28 {
+  padding-top: 28px;
+  padding-left: 38px;
+  padding-bottom: 28px;
+}
+
+#list_back_g1 {
+  background-color: #F8F8F8;
+}
+
+#list_back_g2 {
+  background-color: #F8F8F8;
+}
+
+h1 {
+  font-family: 'Baskerville','Hiragino Kaku Gothic ProN';
+  font-size: 48px;
+  /* font-size: 54px; */
+  font-weight: normal;
+  color: #ffffff;
+  letter-spacing: 0.1em
+}
+
+h2 {
+  font-family: 'Baskerville','Hiragino Kaku Gothic ProN';
+  font-size: 48px;
+  font-weight: normal;
+  color: #000000;
+  /* padding 上 右 下 左 */
+  padding: 96px 0px 0px 0px;
+}
+
+h3 {
+  font-family: Helvetica, sans-serif, Arial;
+  font-size: 24px;
+  font-weight: lighter;
+  color: #000000;
+  padding: 2px 0px 0px 0px;
+  margin-bottom: 32px;
+}
+
+h4 {
+    font-size: 36px;
+    font-weight: lighter;
+    color: #2A83EB;
+}
+
+h5 {
+    font-size: 28px;
+    font-weight: lighter;
+    color: #2A83EB;
+    font-style: italic;
+}
+
+h6 {
+    font-size: 28px;
+    color: #707070;
+    font-weight: lighter;
+}
+
+h7 {
+    font-size: 24px;
+    color: #707070;
+    font-weight: lighter;
+}
+
+/* ////////フォント指定終わり////// */
+
+
+/* /////全体の幅調整///// */
+section{
+  width:100%; 
+  max-width:1080px; 
+  margin:0px auto; 
+  display:table; 
+  position:relative;
+}
+
+/* <main><article>タグには幅調整が効かない */
+/* /////全体の幅調整 終わり///// */
+
+/* ナビ部分 */
+header{
+  width:100%; 
+  background-color:rgba(0, 0, 0, 0.1);
+  display: flex;
+  /* display:table;  */
+  /* ページスクロールして動かしてもナビ位置固定 */
+  position: fixed;
+  z-index: 100;
+}
+
+#logo{
+  float:left;  
+  /* padding 上 右 下 左 */
+  padding:20px 0 0 0;
+}
+
+/* ナビを指定位置へ移動 */
+nav{
+  width:auto; float:right;
+  left: 302px;
+}
+
+/* naviのテキストリンクグループとSNSグループを順番に横並びにする */
+nav ul{
+  display:table; float:left;
+}
+
+nav ul li{float:left;}
+/* .navi-all {float:right;}
+.menu {display: flex;}
+.sns {display: flex;} */
+nav ul li a{
+  color:#2A83EB; 
+  font-size:16px; 
+  padding: 72px 18px 30px 18px; 
+  display:inline-block; 
+  transition: all 0.5s ease 0s;
+  text-decoration: none;
+}
+
+nav ul li a:hover{
+   /* background-color:#ffffff; */
+  border-color: #2A83EB;
+  color:#ffffff; 
+  transition: all 0.5s ease 0s;
+  text-decoration: none;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 2px;
+}
+/* padding 上 右 下 左 */
+.sns {
+    position: relative;
+    top: -5px;
+}
+
+/* humberger */
+.toggle-menu ul {
+  display:table; 
+  width:25px;
+
+  /*PCの時は消しておく*/
+  display: none; 
+  -webkit-appearance: none; /* Crome用　フォ-ム要素の初期化*/
+  appearance: none; /*フォ-ム要素の初期化*/
+  border: none;
+  background: transparent; /* Firefox用 背景を透過させる設定*/
+}
+
+.toggle-menu ul li {
+  width:100%; 
+  height:3px; 
+  background-color:#000000; 
+  margin-bottom:4px;
+
+  /* ブロック要素とインライン要素の中間の状態の要素*/
+  /* display: inline-block;  */
+	transition: all .4s;
+	box-sizing: border-box;
+}
+
+.toggle-menu ul li:last-child {
+  margin-bottom:0px;
+}
+
+/* .sns {
+  padding: 65px 14px 23px 18px;
+} */
+
+/* =======================
+.menu-trigger
+======================= */
+.menu-trigger {
+  display: none; /*PCの時は消しておく*/
+  -webkit-appearance: none; /* Crome用　フォ-ム要素の初期化*/
+  appearance: none; /*フォ-ム要素の初期化*/
+  border: none;
+  background: transparent; /* Firefox用 背景を透過させる設定*/
+}
+.menu-trigger,
+.menu-trigger span {
+	display: inline-block; /* ブロック要素とインライン要素の中間の状態の要素*/
+	transition: all .4s;
+	box-sizing: border-box;
+}
+
+/* humberger end */
+
+/* /////////////////////////////////////////// */
+
+
+/* コンテンツ共通 */
+ /* コンテンツを横並びに２分割 */
+.boxherf {
+  display: flex;
+}
+
+/* メイン */
+.main_box1 {
+flex: 1;
+  max-width: 540px;
+}
+
+.main_box2 {
+flex: 1;
+  max-width: 540px;
+}
+
+/* //////////////// */
+
+ /* テキスト装飾共通 */
+/* 文章の最初の一文字目だけに装飾するcss */
+.dropcap_text:first-letter {
+  font-size: 58px;
+  float: left;
+  line-height: 0.9;
+  margin-right: 0.1em;
+}
+
+.dropcap_text {
+  /* padding 上 右 下 左 */
+}
+/* //////////////// */
+
+
+/* +++++sakura main+++++ */
+/* 全体のバックグランドグラデーション設定 */
+#cherryblossom {
+  margin:0 -10.8%;
+  padding:0 10.8%;
+  background: -moz-linear-gradient(right,#AAE2FF, #FFF);
+  background: -webkit-linear-gradient(right, #AAE2FF, #FFF);
+  background: linear-gradient(to left, #AAE2FF, #FFF);
+  height: 888px;
+}
+
+/* タイトルカラー */
+#h2samurai {
+  color: #2A83EB;
+  margin-top: 120px;
+}
+
+#h4_main_title {
+    margin-bottom: 67px;
+}
+
+#h5_main_title {
+    margin-bottom: 48px;
+}
+
+#samurai_mainvisual {
+    box-shadow:  40px 38px 0px 0 #00A8FF;
+}
+
+#sakura_textp {
+  /* background-color: rgba(126, 252, 0, 0.5); */
+  position: relative;
+  max-width: 540px;
+  top: 173px;
+  left: 38px;
+}
+
+
+/* ++++++++++++++++++ */
+
+
+/* +++++origin+++++ */
+#kizoku_mtop {
+  margin-top: 255px;
+}
+/* ++++++++++++++++++ */
+
+
+/* +++++to the samurai +++++ */
+#yoshino {
+  margin-top: 60px;
+}
+/* ++++++++++++++++++ */
+
+
+/* +++++modern 18th+++++ */
+#chiyoda {
+  margin-top: 48px;
+}
+/* ++++++++++++++++++ */
+
+
+/* +++++product ideas+++++ */
+#productideas{
+  margin:0 -10.8%;
+  padding:0 10.8%;
+  background: -moz-linear-gradient(right,#F5FAFF, #F5FAFF);
+  background: -webkit-linear-gradient(right, #F5FAFF, #F5FAFF);
+  background: linear-gradient(to left, #F5FAFF, #F5FAFF);
+  margin-top: 288px;
+  height: 1550px;
+}
+
+#h4title{
+  padding-top: 96px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+#mbtm24 {
+margin-bottom: 24px;
+}
+/* ++++++++++++++++++ */
+
+
+/* +++++product lineup+++++ */
+#productlineup_samurai {
+  background-image: url(../images/samurai/detail/samurai_sankaku.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  /* 117px */
+}
+
+/* ++++++++++++++++++ */
+
+
+/* +++++product detail+++++ */
+#h4productd {
+  margin-top: 96px;
+  margin-bottom: 84px;
+  text-align: center;
+}
+
+.pd_box1 {
+  flex: 1;
+  max-width: 540px;
+  background-image: url(../images/puroduct/bg_productbox_b.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.pd_box2 {
+  flex: 1;
+  max-width: 540px;
+}
+
+.detailtext_padding {
+  padding-left: 38px;
+}
+
+.h6_p_name{
+  margin-bottom: 48px;
+}
+
+.p_detailtext{
+  margin-bottom: 60px;
+}
+
+.h7mgn {
+  /* padding-top: 36px;
+  padding-bottom: 36px; */
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+
+.pd_btm {
+  padding-bottom: 84px;
+}
+
+.boxshadow {
+  box-shadow:  1px 1px 1px 1px #e2e2e25a;
+  margin-right: 20px;
+}
+
+
+.heart-solid.icon {
+  color: #00A8FF;
+  position: absolute;
+  margin-top: 12px;
+  margin-left: 10px;
+  width: 18px;
+  height: 18px;
+  border-left: solid 2px currentColor;
+  border-bottom: solid 2px currentColor;
+  background-color: currentColor;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.heart-solid.icon:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -2px;
+  width: 16px;
+  height: 10px;
+  border-radius: 10px 10px 0 0;
+  border-top: solid 2px currentColor;
+  border-left: solid 2px currentColor;
+  border-right: solid 2px currentColor;
+  background-color: currentColor;
+}
+.heart-solid.icon:after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 16px;
+  width: 10px;
+  height: 16px;
+  border-radius: 0 10px 10px 0;
+  border-top: solid 2px currentColor;
+  border-right: solid 2px currentColor;
+  border-bottom: solid 2px currentColor;
+  background-color: currentColor;
+}
+
+/* ++++++++++++++++++ */
+
+/* footer */
+#footer_background {
+    background-image: url(../images/footer_background.png);
+    height: 220px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#copy_position {
+    color: #FFF;
+    text-align: center;
+    position: relative;
+    top: 155px;
+    margin-bottom: 40px;
+}
+
+/* ++++++++++++++++++ */
+/* padding 上 右 下 左 */
+
+
+
+
+@media only screen and (max-width: 1440px) {
+section{max-width:95%;}
+}
+
+@media only screen and (max-width: 980px) {
+header{padding:20px 0px;}
+#logo{padding:0px;}
+input[type=checkbox] {position: absolute; top: -9999px; left: -9999px; background:none;}
+input[type=checkbox]:fous{background:none;}
+label {float:right; padding:8px 0px; display:inline-block; cursor:pointer; }
+input[type=checkbox]:checked ~ nav {display:block;}
+
+nav{display:none; position:absolute; right:0px; top:53px; background-color:#002e5b; padding:0px; z-index:99;}
+nav ul{width:auto;}
+nav ul li{float:none; padding:0px; width:100%; display:table;}
+nav ul li a{color:#FFF; font-size:15px; padding:10px 20px; display:block; border-bottom: 1px solid rgba(225,225,225,0.1);}
+nav ul li a i{color:#fde428; padding-right:13px;}
+}
+
+@media only screen and (max-width: 980px) {
+.content{width:90%;}
+}
+
+@media only screen and (max-width: 568px) {
+h1{padding:25px 0px;}
+h1 span{display:block;}
+}
+
+@media only screen and (max-width: 480px) {
+section {max-width: 90%;}
+}
+
+@media only screen and (max-width: 360px) {
+h1{font-size:20px;}
+label{padding:5px 0px;}
+#logo{font-size: 20px;}
+nav{top:47px;}
+}
+
+@media only screen and (max-width: 320px) {
+h1 {padding: 20px 0px;}
+}

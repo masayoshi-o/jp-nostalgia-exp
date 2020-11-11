@@ -1,0 +1,439 @@
+@charset "UTF-8";
+
+/* リセットCSS */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*{
+  text-decoration:none; 
+  list-style:none; 
+  margin:0px; padding:0px; 
+  outline:none;
+}
+
+
+body{
+  /* ここで全体のフォント設定 */
+  margin:0px; 
+  padding:0px; 
+  font-family: 'Times New Roman', Times, serif,'Baskerville',"Helvetica","Helvetica Neue";
+  /* letter-spacing: 0.07em; */
+}
+
+/* //////////font指定///////// */
+a {	
+  font-family: 'Baskerville';
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 18px;
+  color: #fff;
+}
+
+p {
+  font-family: 'Times New Roman', Times, serif;
+  color: #707070;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+h1 {
+  font-family: 'Baskerville','Hiragino Kaku Gothic ProN';
+  font-size: 48px;
+  /* font-size: 54px; */
+  font-weight: normal;
+  color: #ffffff;
+  letter-spacing: 0.1em
+}
+
+h2 {
+  font-family: 'Baskerville','Hiragino Kaku Gothic ProN';
+  font-size: 48px;
+  font-weight: normal;
+  color: #000000;
+  /* background-color: #FF6767; */
+  /* padding 上 右 下 左 */
+  padding: 96px 0px 0px 0px;
+}
+
+h3 {
+  font-family: Helvetica, sans-serif, Arial;
+  font-size: 24px;
+  font-weight: lighter;
+  color: #000000;
+  padding: 2px 0px 0px 0px;
+  /* background-color: #fde428; */
+}
+/* ////////フォント指定終わり////// */
+
+
+/* /////全体の幅調整///// */
+section{
+  width:100%; 
+  max-width:1080px; 
+  margin:0px auto; 
+  display:table; 
+  position:relative;
+}
+
+/* <main><article>タグには幅調整が効かない */
+
+/* /////全体の幅調整 終わり///// */
+
+header{
+  width:100%; 
+  background-color:rgba(0, 0, 0, 0.4);
+  display: flex;
+  /* display:table;  */
+  /* ページスクロールして動かしてもナビ位置固定 */
+  position: fixed;
+  z-index: 100;
+}
+
+#logo{
+  float:left;  
+  /* padding 上 右 下 左 */
+  padding:20px 0 0 0;
+}
+
+/* ナビを指定位置へ移動 */
+nav{
+  width:auto; float:right;
+  left: 302px;
+}
+
+/* naviのテキストリンクグループとSNSグループを順番に横並びにする */
+nav ul{
+  display:table; float:left;
+}
+
+nav ul li{float:left;}
+nav ul li:last-child{padding-right:0px;}
+nav ul li a{color:#ffffff; font-size:16px; padding: 72px 18px 30px 18px; display:inline-block; transition: all 0.5s ease 0s;}
+nav ul li a:hover{background-color:#ffffff; color:#222222; transition: all 0.5s ease 0s;}
+nav ul li a:hover i{color:#222222; transition: all 0.5s ease 0s;}
+
+/* ナビのリンクの i tag 消した */
+/* nav ul li a i{padding-right:10px; color:#002e5b; transition: all 0.5s ease 0s;} */
+
+/* humberger */
+
+.toggle-menu ul {
+  display:table; 
+  width:25px;
+
+  /*PCの時は消しておく*/
+  display: none; 
+  -webkit-appearance: none; /* Crome用　フォ-ム要素の初期化*/
+  appearance: none; /*フォ-ム要素の初期化*/
+  border: none;
+  background: transparent; /* Firefox用 背景を透過させる設定*/
+}
+
+.toggle-menu ul li {
+  width:100%; 
+  height:3px; 
+  background-color:#000000; 
+  margin-bottom:4px;
+
+  /* ブロック要素とインライン要素の中間の状態の要素*/
+  /* display: inline-block;  */
+	transition: all .4s;
+	box-sizing: border-box;
+}
+
+.toggle-menu ul li:last-child {
+  margin-bottom:0px;
+}
+
+/* .sns {
+  padding: 65px 14px 23px 18px;
+} */
+
+/* =======================
+.menu-trigger
+======================= */
+.menu-trigger {
+  display: none; /*PCの時は消しておく*/
+  -webkit-appearance: none; /* Crome用　フォ-ム要素の初期化*/
+  appearance: none; /*フォ-ム要素の初期化*/
+  border: none;
+  background: transparent; /* Firefox用 背景を透過させる設定*/
+}
+.menu-trigger,
+.menu-trigger span {
+	display: inline-block; /* ブロック要素とインライン要素の中間の状態の要素*/
+	transition: all .4s;
+	box-sizing: border-box;
+}
+
+/* humberger end */
+
+/* /////////////////////////////////////////// */
+
+.maincontent {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/mainvisual.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  /* margin-bottom: 60px; */
+}
+
+#catchcopy {
+    /* padding 上 右 下 左 */
+    /* background-color: #FF6767; */
+  width:100%; 
+  max-width:1080px; 
+  margin:0px auto; 
+  display:table; 
+  position:relative;
+  /* 画面の一番上からの距離 */
+  top: 352px;
+}
+
+
+
+/* +++++purpose+++++  */
+#purpose {
+  background-image: url(../images/explanation_background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.purpose_text {
+  margin-top: 38px;
+}
+
+.purpose_text p {
+  font-size: 24px;
+  line-height: 26px;
+}
+
+.purpose_text #thankyou {
+  font-size: 32px;
+  line-height: 26px;
+  margin-bottom: 96px;
+}
+
+/* +++++++++++++++++++ */
+
+
+/*  */
+/* 確認用 */
+.hgbox {
+  /* background-color: rgba(0, 206, 209, 0.15); */
+}
+/*  */
+/*  */
+
+/* 3コンテンツ共通 */
+ /* コンテンツを横並びに２分割 */
+.boxherf {
+  display: flex;
+}
+
+.box2 {
+  /* background-color: rgba(255, 255, 255, 0.201); */
+  position: relative;
+  flex: 1;
+  top: -198px;
+  height: 768px;
+  max-width: 540px;
+  /* background背景画像入れるため */
+  /* background-image: url(../images/.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative; */
+  
+}
+
+.box3 {
+  /* background-color: rgba(0, 86, 152, 0.201); */
+  position: relative;
+  flex: 1;
+  top: -198px;
+  height: 768px;
+  max-width: 540px;
+  /* background背景画像入れるため */
+  /* background-image: url(../images/.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative; */
+}
+
+ /* テキスト装飾共通 */
+/* 文章の最初の一文字目だけに装飾するcss */
+.dropcap_text:first-letter {
+  font-size: 64px;
+  float: left;
+  line-height: 0.9; 
+}
+
+.dropcap_text {
+  /* padding 上 右 下 左 */
+  margin-top: 62px;
+  max-width: 550px;
+  line-height: 28px;
+}
+/* //////////////// */
+/* //////////////// */
+
+/* +++++sakura+++++ */
+/* 全体のバックグランドグラデーション設定 */
+#cherryblossom {
+  margin:0 -10.8%;
+  padding:0 10.8%;
+  background: -moz-linear-gradient(right,#FFAAAA, #FFF);
+  background: -webkit-linear-gradient(right, #FFAAAA, #FFF);
+  background: linear-gradient(to left, #FFAAAA, #FFF);
+  height: 768px;
+}
+
+/* タイトルカラー */
+#h2cbf {
+  color: #FF6767;
+}
+
+#sakura_textp {
+  /* background-color: rgba(126, 252, 0, 0.5); */
+  position: relative;
+  max-width: 540px;
+  top: 173px;
+  left: 38px;
+}
+
+#takealook_text {
+  /* margin-top: 101px; */
+  margin-top: 79px;
+  /* margin-bottom: 36px; */
+  color: #FF6767;
+  }
+
+#sakura_keyvisual {
+  /* background-color: #fde4285f; */
+  /* position: relative;
+  top: 173px;
+  left: 55px; */
+  position: absolute;
+  right: 24px;
+  bottom: 172px;
+  }
+
+
+#enter_sakura {
+  color: #FF6767;
+  border-color: #FFA2A2;
+  position: relative;
+  /* left: 77px; */
+  /* margin-top: 36px;
+  margin-bottom: 96px; */
+  margin: 36px 153px 96px 115px;
+  top: 36px; 
+}
+/* ++++++++++++++++++ */
+
+
+/* 共通テキスト設定 */
+.takealook {
+  font-size: 24px;
+  line-height: 28px;
+  /* margin-bottom: 36px; */ 
+  text-align: center;
+  left: -32px;
+  /* background-color: #fde428; */
+}
+
+.enter {
+  font-size: 36px;
+  border: solid 4px ;
+  /* padding 上 右 下 左 */
+  padding: 10px 110px 9px 111px;
+}
+
+.enter_p {
+  text-align: initial;
+  margin-top: 40px;
+}
+
+
+
+/* test */
+/* Pen-specific styles */
+
+
+
+
+
+
+/* Pattern styles */
+.container {
+  display: flex;
+}
+
+.left-half {
+  background-color: #ff9e2c;
+  flex: 50%;
+  padding: 1rem;
+}
+
+.right-half {
+  background-color: #b6701e;
+  flex: 50%;
+  padding: 1rem;
+}
+/* test */
+
+
+
+
+
+@media only screen and (max-width: 1440px) {
+section{max-width:95%;}
+}
+
+@media only screen and (max-width: 980px) {
+header{padding:20px 0px;}
+#logo{padding:0px;}
+input[type=checkbox] {position: absolute; top: -9999px; left: -9999px; background:none;}
+input[type=checkbox]:fous{background:none;}
+label {float:right; padding:8px 0px; display:inline-block; cursor:pointer; }
+input[type=checkbox]:checked ~ nav {display:block;}
+
+nav{display:none; position:absolute; right:0px; top:53px; background-color:#002e5b; padding:0px; z-index:99;}
+nav ul{width:auto;}
+nav ul li{float:none; padding:0px; width:100%; display:table;}
+nav ul li a{color:#FFF; font-size:15px; padding:10px 20px; display:block; border-bottom: 1px solid rgba(225,225,225,0.1);}
+nav ul li a i{color:#fde428; padding-right:13px;}
+}
+
+@media only screen and (max-width: 980px) {
+.content{width:90%;}
+}
+
+@media only screen and (max-width: 568px) {
+h1{padding:25px 0px;}
+h1 span{display:block;}
+}
+
+@media only screen and (max-width: 480px) {
+section {max-width: 90%;}
+}
+
+@media only screen and (max-width: 360px) {
+h1{font-size:20px;}
+label{padding:5px 0px;}
+#logo{font-size: 20px;}
+nav{top:47px;}
+}
+
+@media only screen and (max-width: 320px) {
+h1 {padding: 20px 0px;}
+}
